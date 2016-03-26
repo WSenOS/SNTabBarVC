@@ -71,6 +71,7 @@
     return YES;
 }
 
+
 ##截图效果如下
 ![image](https://github.com/WSeniOS/SNTabBarVC/blob/master/SNTabBarVC/images/image1.PNG) 
 ![image](https://github.com/WSeniOS/SNTabBarVC/blob/master/SNTabBarVC/images/image1.PNG)
