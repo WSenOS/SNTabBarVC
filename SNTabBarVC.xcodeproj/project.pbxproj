@@ -24,6 +24,8 @@
 		4BF00B4E1CA653A500D2D916 /* ViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF00B4D1CA653A500D2D916 /* ViewController4.m */; };
 		4BF00B511CA653B100D2D916 /* ViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF00B501CA653B100D2D916 /* ViewController5.m */; };
 		4BF00B5B1CA671F400D2D916 /* UIView+sn_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF00B591CA671F400D2D916 /* UIView+sn_Extension.m */; };
+		4BF00B5E1CA685AD00D2D916 /* image1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4BF00B5D1CA685AD00D2D916 /* image1.PNG */; };
+		4BF00B601CA685B200D2D916 /* image2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4BF00B5F1CA685B200D2D916 /* image2.PNG */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		4BF00B551CA666BB00D2D916 /* SNTabBarConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNTabBarConst.h; sourceTree = "<group>"; };
 		4BF00B581CA671F400D2D916 /* UIView+sn_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+sn_Extension.h"; sourceTree = "<group>"; };
 		4BF00B591CA671F400D2D916 /* UIView+sn_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+sn_Extension.m"; sourceTree = "<group>"; };
+		4BF00B5D1CA685AD00D2D916 /* image1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.PNG; sourceTree = "<group>"; };
+		4BF00B5F1CA685B200D2D916 /* image2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.PNG; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		4BF00B011CA6314800D2D916 /* SNTabBarVC */ = {
 			isa = PBXGroup;
 			children = (
+				4BF00B5C1CA6857600D2D916 /* images */,
 				4BF00B421CA6536500D2D916 /* DemoVC */,
 				4BF00B351CA6317000D2D916 /* SNTabBar */,
 				4BF00B051CA6314800D2D916 /* AppDelegate.h */,
@@ -201,6 +206,15 @@
 				4BF00B501CA653B100D2D916 /* ViewController5.m */,
 			);
 			path = DemoVC;
+			sourceTree = "<group>";
+		};
+		4BF00B5C1CA6857600D2D916 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4BF00B5D1CA685AD00D2D916 /* image1.PNG */,
+				4BF00B5F1CA685B200D2D916 /* image2.PNG */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF00B121CA6314800D2D916 /* LaunchScreen.storyboard in Resources */,
+				4BF00B601CA685B200D2D916 /* image2.PNG in Resources */,
+				4BF00B5E1CA685AD00D2D916 /* image1.PNG in Resources */,
 				4BF00B0F1CA6314800D2D916 /* Assets.xcassets in Resources */,
 				4BF00B0D1CA6314800D2D916 /* Main.storyboard in Resources */,
 			);
@@ -568,6 +584,7 @@
 				4BF00B2E1CA6314900D2D916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BF00B2F1CA6314900D2D916 /* Build configuration list for PBXNativeTarget "SNTabBarVCTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +593,7 @@
 				4BF00B311CA6314900D2D916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BF00B321CA6314900D2D916 /* Build configuration list for PBXNativeTarget "SNTabBarVCUITests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +602,7 @@
 				4BF00B341CA6314900D2D916 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
