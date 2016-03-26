@@ -2,14 +2,14 @@
 ##tabBar进行了封装 用起来比较方便
 ###具体使用看代码
 
-
- #import "AppDelegate.h"
- #import "SNTabBarController.h"
- #import "ViewController1.h"
- #import "ViewController2.h"
- #import "ViewController3.h"
- #import "ViewController4.h"
- #import "ViewController5.h"
+'''
+#import "AppDelegate.h"
+#import "SNTabBarController.h"
+#import "ViewController1.h"
+#import "ViewController2.h"
+#import "ViewController3.h"
+#import "ViewController4.h"
+#import "ViewController5.h"
 
 @interface AppDelegate ()
 
@@ -70,7 +70,7 @@
 
     return YES;
 }
-
+'''
 
 ##截图效果如下
 ![image](https://github.com/WSeniOS/SNTabBarVC/blob/master/SNTabBarVC/images/image1.PNG) 
