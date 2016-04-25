@@ -31,30 +31,22 @@
     [self.tabBar addSubview:self.snTabBar];
 }
 
-- (void)setControllers:(NSArray *)controllers {
-    _controllers = controllers;
-    //创建tabBa按钮
-    [self createSNTabBarItem];
-}
-
-- (void)createSNTabBarItem {
+- (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers {
     self.snTabBar.itemImageScale = self.itemImageScale;
     self.snTabBar.tabBarBgColor = self.tabBarBgColor;
     self.snTabBar.normalItemColor = self.normalItemColor;
     self.snTabBar.selectedItemColor = self.selectedItemColor;
     self.snTabBar.itemFont = self.itemFont;
-    for (UIViewController * vc in _controllers) {
+    [viewControllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIViewController * vc = obj;
         UIImage * normalImage = vc.tabBarItem.image;
         UIImage * selectedImage = vc.tabBarItem.selectedImage;
         NSString * title = vc.tabBarItem.title;
         [self.snTabBar sn_addNormalImage:normalImage selectedImage:selectedImage itemTitle:title];
-    }
-    [_controllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIViewController * vc = obj;
+        [self addChildViewController:vc];
         SNTabBarItem * tabBarItem = (SNTabBarItem *)[self.snTabBar viewWithTag:idx + kItemStartTag];
         tabBarItem.tabBarItem = vc.tabBarItem;
     }];
-    self.viewControllers = _controllers;
     self.snTabBar.defaultSelectedIndex = self.defaultSelectedIndex;
 }
 
@@ -65,11 +57,11 @@
 }
 
 - (void)removeOriginControls {
-    [self.tabBar.subviews enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    for (id obj in self.tabBar.subviews) {
         if ([obj isKindOfClass:[UIControl class]]) {
             [obj removeFromSuperview];
         }
-    }];
+    }
 }
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
@@ -81,8 +73,18 @@
 }
 
 #pragma mark - SNTabBarDelegate
-- (void)tabBar:(SNTabBar *)tabBar item:(SNTabBarItem *)tabBarItem selectedIndex:(NSInteger)index {
+- (BOOL)tabBar:(SNTabBar *)tabBar item:(SNTabBarItem *)tabBarItem selectedIndex:(NSInteger)index {
+    if (index == 4) {
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"" message:@"尚未登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * confirm = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:confirm];
+        [self presentViewController:alert animated:YES completion:nil];
+        return NO;
+    }
     self.selectedIndex = index;
+    return YES;
 }
 
 @end

@@ -10,7 +10,7 @@
 @class SNTabBar, SNTabBarItem;
 @protocol SNTabBarDelegate <NSObject>
 
-- (void)tabBar:(SNTabBar *)tabBar item:(SNTabBarItem *)tabBarItem selectedIndex:(NSInteger)index;
+- (BOOL)tabBar:(SNTabBar *)tabBar item:(SNTabBarItem *)tabBarItem selectedIndex:(NSInteger)index;
 
 @end
 

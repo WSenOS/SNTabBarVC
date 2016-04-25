@@ -82,11 +82,14 @@
 }
 
 - (void)tabBarItemClick:(SNTabBarItem *)item {
-    _selectedItem.selected = NO;
-    item.selected = YES;
-    _selectedItem = item;
+    BOOL isSelected = NO;
     if (self.delegate && [self.delegate respondsToSelector:@selector(tabBar:item:selectedIndex:)]) {
-        [_delegate tabBar:self item:item selectedIndex:item.tag - kItemStartTag];
+        isSelected = [_delegate tabBar:self item:item selectedIndex:item.tag - kItemStartTag];
+    }
+    if (isSelected) {
+        _selectedItem.selected = NO;
+        item.selected = YES;
+        _selectedItem = item;
     }
 }
 

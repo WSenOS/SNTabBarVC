@@ -10,10 +10,6 @@
 
 @interface SNTabBarController : UITabBarController
 /*
- * 控制器
- */
-@property (nonatomic, strong) NSArray * controllers;
-/*
  * 背景色
  */
 @property (nonatomic, strong) UIColor * tabBarBgColor;
@@ -37,6 +33,5 @@
  * 图片比例
  */
 @property (nonatomic, assign) CGFloat itemImageScale;
-
 
 @end
