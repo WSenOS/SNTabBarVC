@@ -71,10 +71,10 @@
     tabBarController.viewControllers = @[nav1,nav2,nav3,nav4,nav5];
     self.window.rootViewController = tabBarController;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        vc1.tabBarItem.badgeValue = @"100000";
-        vc5.tabBarItem.badgeValue = @"0";
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        vc1.tabBarItem.badgeValue = @"100000";
+//        vc5.tabBarItem.badgeValue = @"0";
+//    });
 
     return YES;
 }

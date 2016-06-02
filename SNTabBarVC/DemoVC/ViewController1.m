@@ -24,6 +24,10 @@
     [self.view addSubview:btn];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"跳转VC2" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonItemClicked)];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
 }
 
 - (void)rightBarButtonItemClicked {

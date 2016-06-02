@@ -34,4 +34,8 @@
  */
 @property (nonatomic, assign) CGFloat itemImageScale;
 
+/*
+ * popToRoot清除
+ */
+- (void)removeOriginControls;
 @end
