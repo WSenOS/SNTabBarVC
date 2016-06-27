@@ -28,8 +28,23 @@
 - (void)createSNTabBar {
     self.snTabBar = [[SNTabBar alloc] initWithFrame:self.tabBar.bounds];
     self.snTabBar.delegate = self;
+//    [self.tabBar setBackgroundImage:[self createImageWithColor:[UIColor clearColor]]];
+//    [self.tabBar setShadowImage:[self createImageWithColor:[UIColor clearColor]]];
     [self.tabBar addSubview:self.snTabBar];
 }
+
+//颜色转image 可去除边线
+- (UIImage*) createImageWithColor: (UIColor*) color {
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
 
 - (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers {
     self.snTabBar.itemImageScale = self.itemImageScale;
@@ -48,6 +63,7 @@
         tabBarItem.tabBarItem = vc.tabBarItem;
     }];
     self.snTabBar.defaultSelectedIndex = self.defaultSelectedIndex;
+    [super setViewControllers:viewControllers];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
