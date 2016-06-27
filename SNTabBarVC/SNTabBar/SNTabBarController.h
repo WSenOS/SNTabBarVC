@@ -33,7 +33,6 @@
  * 图片比例
  */
 @property (nonatomic, assign) CGFloat itemImageScale;
-
 /*
  * popToRoot清除
  */
