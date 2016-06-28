@@ -58,7 +58,6 @@
         UIImage * selectedImage = vc.tabBarItem.selectedImage;
         NSString * title = vc.tabBarItem.title;
         [self.snTabBar sn_addNormalImage:normalImage selectedImage:selectedImage itemTitle:title];
-        [self addChildViewController:vc];
         SNTabBarItem * tabBarItem = (SNTabBarItem *)[self.snTabBar viewWithTag:idx + kItemStartTag];
         tabBarItem.tabBarItem = vc.tabBarItem;
     }];
